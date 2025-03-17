@@ -2,6 +2,38 @@ from autogen_agentchat.agents import AssistantAgent
 from autogen_agentchat.teams import RoundRobinGroupChat, SelectorGroupChat, Swarm
 from autogen_ext.models.openai import AzureOpenAIChatCompletionClient
 from autogen_agentchat.conditions import  TextMentionTermination
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+def load_env_variables():
+    """
+    Load environment variables from .env file
+    
+    Returns:
+        dict: Dictionary with environment variables or default values
+    """
+    load_dotenv()
+    
+    required_vars = [
+        "AZURE_OPENAI_API_KEY",
+        "AZURE_OPENAI_ENDPOINT",
+        "AZURE_OPENAI_VERSION"
+    ]
+    
+    # Check for required environment variables
+    missing_vars = [var for var in required_vars if not os.getenv(var)]
+    if missing_vars:
+        raise EnvironmentError(f"Missing required environment variables: {', '.join(missing_vars)}")
+    
+    return {
+        "api_key": os.getenv("AZURE_OPENAI_API_KEY"),
+        "azure_endpoint": os.getenv("AZURE_OPENAI_ENDPOINT"),
+        "api_version": os.getenv("AZURE_OPENAI_VERSION", "2024-08-01-preview"),
+        "gpt4_deployment": os.getenv("AZURE_OPENAI_GPT4_DEPLOYMENT", "gpt-4o"),
+        "gpt4_model": os.getenv("AZURE_OPENAI_GPT4_MODEL", "gpt-4o"),
+        "gpt4mini_model": os.getenv("AZURE_OPENAI_GPT4MINI_MODEL", "gpt-4o-mini"),
+    }
 
 #################################################
 # Tool Definitions Section
@@ -101,20 +133,23 @@ def get_candidates_from_pool(job_position: str) -> list:
 # - We use a ligther model for the Recruiter/Screener to save costs and balance the load to avoid throttling.
 ##################################################
 
+# Load environment variables
+env_vars = load_env_variables()
+
 azure_openai_client = AzureOpenAIChatCompletionClient(
-    api_key="9121c37c8f134ca1835330846769ab78",
-    azure_endpoint="https://oai-obuas2nnzg726.openai.azure.com/",
-    model="gpt-4o",
-    azure_deployment="gpt-4o",
-    api_version="2024-08-01-preview",
+    api_key=env_vars["api_key"],
+    azure_endpoint=env_vars["azure_endpoint"],
+    model=env_vars["gpt4_model"],
+    azure_deployment=env_vars["gpt4_deployment"],
+    api_version=env_vars["api_version"],
 )
 
 azure_openai_client_mini = AzureOpenAIChatCompletionClient(
-    api_key="9121c37c8f134ca1835330846769ab78",
-    azure_endpoint="https://oai-obuas2nnzg726.openai.azure.com/",
-    model="gpt-4o-mini",
-    azure_deployment="gpt-4o",
-    api_version="2024-08-01-preview",
+    api_key=env_vars["api_key"],
+    azure_endpoint=env_vars["azure_endpoint"],
+    model=env_vars["gpt4mini_model"],
+    azure_deployment=env_vars["gpt4_deployment"],
+    api_version=env_vars["api_version"],
 )
 
 #################################################
