@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/4a261566-8871-4319-b981-09e08f5c8648/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/egypt-conf-contoso-beverages",
+    "appService.deploySubpath": "."
+}

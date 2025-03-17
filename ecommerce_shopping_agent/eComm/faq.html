@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Contoso Beers & Spirits</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color) !important;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .faq-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1608270586620-248524c67de9');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 0;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .search-bar {
+            width: 300px;
+        }
+
+        .accordion-item {
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,.125);
+        }
+
+        .accordion-button:focus {
+            box-shadow: 0 0 0 0.25rem rgba(230,126,34,.25);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Contoso</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="/#beers">Beers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#spirits">Spirits</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#wine">Wine</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#special-offers">Special Offers</a></li>
+                </ul>
+                <form class="d-flex me-3">
+                    <div class="input-group search-bar">
+                        <input class="form-control" type="search" placeholder="Search products..." aria-label="Search">
+                        <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
+                    </div>
+                </form>
+                <div class="d-flex align-items-center">
+                    <a href="#" class="text-white me-3"><i class="bi bi-person"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-cart3"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FAQ Header -->
+    <header class="faq-header text-center">
+        <div class="container">
+            <h1 class="display-4">Frequently Asked Questions</h1>
+            <p class="lead">Find answers to common questions about our products and services</p>
+        </div>
+    </header>
+
+    <!-- FAQ Content -->
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion" id="faqAccordion">
+                    <!-- Ordering & Delivery -->
+                    <h3 class="mb-4">Ordering & Delivery</h3>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                What are your delivery areas?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We currently deliver to most major metropolitan areas. Enter your zip code at checkout to confirm if we deliver to your area. We're continuously expanding our delivery network to serve more locations.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                How long does delivery take?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Standard delivery typically takes 2-3 business days. We also offer express delivery options in select areas for same-day or next-day delivery.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-cold">
+                                Can I order cold beverages?
+                            </button>
+                        </h2>
+                        <div id="faq-cold" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes, it is possible to have your order delivered cold. Just mention it to the customer service agent on the phone or write it in the comment box when placing your order online.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-currency">
+                                Do you accept payments with foreign currencies other than Egyptian Pound?
+                            </button>
+                        </h2>
+                        <div id="faq-currency" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Only Egyptian currency is accepted for cash payments, but we do accept transactions from all major credit cards.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Age Verification & Legal -->
+                    <h3 class="mb-4 mt-5">Age Verification & Legal</h3>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                How do you verify age for alcohol purchases?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We require valid ID verification at the time of delivery. The recipient must be 21 or older and present a valid government-issued photo ID. No exceptions will be made.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products & Selection -->
+                    <h3 class="mb-4 mt-5">Products & Selection</h3>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                Do you offer special orders for products not listed?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes! We can special order most products not listed on our website. Contact our customer service team with your request, and we'll do our best to source it for you.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Returns & Refunds -->
+                    <h3 class="mb-4 mt-5">Returns & Refunds</h3>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                What is your return policy?
+                            </button>
+                        </h2>
+                        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We accept returns of unopened products within 30 days of purchase. Contact our customer service team to initiate a return. Note that some items may not be eligible for return due to local regulations.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Contoso</h5>
+                    <p>Premium beers and spirits for the discerning customer.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/" class="text-white">Home</a></li>
+                        <li><a href="#" class="text-white">About Us</a></li>
+                        <li><a href="#" class="text-white">Contact</a></li>
+                        <li><a href="#" class="text-white">Shipping Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Newsletter</h5>
+                    <p>Subscribe for updates and special offers</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Enter your email">
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

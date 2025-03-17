@@ -1,0 +1,209 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Artisan IPA",
+      "category": "Beer",
+      "price": 12.99,
+      "image": "https://images.unsplash.com/photo-1608270586620-248524c67de9",
+      "description": "Craft brewed IPA with citrus notes",
+      "stock": 150,
+      "rating": 4.5,
+      "brand": "Premium Craft"
+    },
+    {
+      "id": 2,
+      "name": "Single Malt Whiskey",
+      "category": "Spirits",
+      "price": 89.99,
+      "image": "https://images.unsplash.com/photo-1569529465841-dfecdab7503b",
+      "description": "12-year aged single malt whiskey",
+      "stock": 45,
+      "rating": 4.8,
+      "brand": "Heritage Line"
+    },
+    {
+      "id": 3,
+      "name": "Cabernet Sauvignon",
+      "category": "Wine",
+      "price": 34.99,
+      "image": "https://images.unsplash.com/photo-1566633806327-68e152aaf26d",
+      "description": "Full-bodied red wine with dark fruit notes",
+      "stock": 80,
+      "rating": 4.6,
+      "brand": "Artisan Select"
+    },
+    {
+      "id": 4,
+      "name": "Botanical Gin",
+      "category": "Spirits",
+      "price": 45.99,
+      "image": "https://images.unsplash.com/photo-1563223771-375783ee91ad",
+      "description": "London dry gin with botanical infusions",
+      "stock": 65,
+      "rating": 4.7,
+      "brand": "Premium Craft"
+    },
+    {
+      "id": 5,
+      "name": "Chocolate Stout",
+      "category": "Beer",
+      "price": 14.99,
+      "image": "https://images.unsplash.com/photo-1584225064785-c62a8b43d148",
+      "description": "Rich stout with chocolate undertones",
+      "stock": 120,
+      "rating": 4.4,
+      "brand": "Premium Craft"
+    },
+    {
+      "id": 6,
+      "name": "Chardonnay Reserve",
+      "category": "Wine",
+      "price": 29.99,
+      "description": "Oaked chardonnay with vanilla notes",
+      "stock": 90,
+      "rating": 4.3,
+      "brand": "Heritage Line"
+    },
+    {
+      "id": 7,
+      "name": "Caribbean Rum",
+      "category": "Spirits",
+      "price": 39.99,
+      "description": "Aged Caribbean rum with tropical notes",
+      "stock": 55,
+      "rating": 4.6,
+      "brand": "Heritage Line"
+    },
+    {
+      "id": 8,
+      "name": "Belgian Tripel",
+      "category": "Beer",
+      "price": 16.99,
+      "description": "Traditional Belgian tripel ale",
+      "stock": 85,
+      "rating": 4.5,
+      "brand": "Artisan Select"
+    },
+    {
+      "id": 9,
+      "name": "Premium Vodka",
+      "category": "Spirits",
+      "price": 32.99,
+      "description": "Triple-distilled premium vodka",
+      "stock": 100,
+      "rating": 4.4,
+      "brand": "Premium Craft"
+    },
+    {
+      "id": 10,
+      "name": "Pinot Noir",
+      "category": "Wine",
+      "price": 27.99,
+      "description": "Light-bodied red wine with berry notes",
+      "stock": 70,
+      "rating": 4.5,
+      "brand": "Artisan Select"
+    },
+    {
+      "id": 11,
+      "name": "Craft Lager",
+      "category": "Beer",
+      "price": 11.99,
+      "description": "Crisp and clean craft lager",
+      "stock": 200,
+      "rating": 4.2,
+      "brand": "Premium Craft"
+    },
+    {
+      "id": 12,
+      "name": "Aged Tequila",
+      "category": "Spirits",
+      "price": 59.99,
+      "description": "Añejo tequila aged in oak barrels",
+      "stock": 40,
+      "rating": 4.7,
+      "brand": "Heritage Line"
+    },
+    {
+      "id": 13,
+      "name": "Sauvignon Blanc",
+      "category": "Wine",
+      "price": 24.99,
+      "description": "Crisp white wine with citrus notes",
+      "stock": 95,
+      "rating": 4.4,
+      "brand": "Artisan Select"
+    },
+    {
+      "id": 14,
+      "name": "Pale Ale",
+      "category": "Beer",
+      "price": 13.99,
+      "description": "American-style pale ale",
+      "stock": 160,
+      "rating": 4.3,
+      "brand": "Premium Craft"
+    },
+    {
+      "id": 15,
+      "name": "Spiced Rum",
+      "category": "Spirits",
+      "price": 29.99,
+      "description": "Caribbean rum with exotic spices",
+      "stock": 75,
+      "rating": 4.5,
+      "brand": "Heritage Line"
+    },
+    {
+      "id": 16,
+      "name": "Merlot Reserve",
+      "category": "Wine",
+      "price": 31.99,
+      "description": "Full-bodied merlot with oak finish",
+      "stock": 60,
+      "rating": 4.6,
+      "brand": "Heritage Line"
+    },
+    {
+      "id": 17,
+      "name": "Wheat Beer",
+      "category": "Beer",
+      "price": 12.99,
+      "description": "German-style wheat beer",
+      "stock": 140,
+      "rating": 4.4,
+      "brand": "Artisan Select"
+    },
+    {
+      "id": 18,
+      "name": "Craft Bourbon",
+      "category": "Spirits",
+      "price": 69.99,
+      "description": "Small-batch Kentucky bourbon",
+      "stock": 35,
+      "rating": 4.8,
+      "brand": "Heritage Line"
+    },
+    {
+      "id": 19,
+      "name": "Rosé Wine",
+      "category": "Wine",
+      "price": 22.99,
+      "description": "Dry rosé with floral notes",
+      "stock": 110,
+      "rating": 4.3,
+      "brand": "Artisan Select"
+    },
+    {
+      "id": 20,
+      "name": "Porter",
+      "category": "Beer",
+      "price": 13.99,
+      "description": "Robust porter with coffee notes",
+      "stock": 90,
+      "rating": 4.5,
+      "brand": "Premium Craft"
+    }
+  ]
+}

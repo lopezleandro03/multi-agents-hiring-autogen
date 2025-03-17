@@ -1,0 +1,14 @@
+{
+  "name": "contoso-spirits",
+  "version": "1.0.0",
+  "description": "Contoso Beers & Spirits eCommerce website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "swagger-ui-express": "^5.0.0",
+    "yamljs": "^0.3.0"
+  }
+}

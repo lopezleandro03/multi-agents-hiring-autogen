@@ -1,0 +1,224 @@
+openapi: 3.0.0
+info:
+  title: Contoso Beers & Spirits API
+  description: API for Contoso Beers & Spirits eCommerce platform
+  version: 1.0.0
+  contact:
+    email: api@contoso.com
+
+servers:
+  - url: https://egypt-conf-contoso-beverages.azurewebsites.net/
+    description: Development server
+  - url: https://egypt-conf-contoso-beverages.azurewebsites.net/
+    description: Production server
+
+paths:
+  /api/products:
+    get:
+      summary: Get all products
+      description: Retrieve a list of all available products
+      operationId: getProducts
+      tags:
+        - Products
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+        '500':
+          description: Internal server error
+          
+  /api/orders/{orderId}:
+    get:
+      summary: Get order by ID
+      description: Retrieve order details by order ID. Returns default order if ID not found.
+      operationId: getOrderById
+      tags:
+        - Orders
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          description: ID of the order to retrieve
+          schema:
+            type: string
+            example: ORD-001
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '500':
+          description: Internal server error
+
+  /api/orders:
+    post:
+      summary: Create a new order
+      description: Create a new order in the system
+      operationId: createOrder
+      tags:
+        - Orders
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+      responses:
+        '201':
+          description: Order created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '400':
+          description: Missing required fields
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '409':
+          description: Order ID already exists
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: "Artisan IPA"
+        category:
+          type: string
+          enum: [Beer, Wine, Spirits]
+          example: "Beer"
+        price:
+          type: number
+          format: float
+          example: 12.99
+        image:
+          type: string
+          format: uri
+          example: "https://images.unsplash.com/photo-1608270586620-248524c67de9"
+        description:
+          type: string
+          example: "Craft brewed IPA with citrus notes"
+        stock:
+          type: integer
+          example: 150
+        rating:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 5
+          example: 4.5
+        brand:
+          type: string
+          example: "Premium Craft"
+      required:
+        - id
+        - name
+        - category
+        - price
+        
+    Order:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "ORD-001"
+        userId:
+          type: string
+          example: "USER123"
+        orderDate:
+          type: string
+          format: date-time
+        status:
+          type: string
+          enum: [pending, processing, shipped, delivered]
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderItem'
+        totalAmount:
+          type: number
+          format: float
+        shippingAddress:
+          $ref: '#/components/schemas/Address'
+        deliveryNotes:
+          type: string
+      required:
+        - id
+        - userId
+        - orderDate
+        - status
+        - items
+        - totalAmount
+        - shippingAddress
+        
+    OrderItem:
+      type: object
+      properties:
+        productId:
+          type: integer
+        quantity:
+          type: integer
+          minimum: 1
+        price:
+          type: number
+          format: float
+      required:
+        - productId
+        - quantity
+        - price
+        
+    Address:
+      type: object
+      properties:
+        street:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        zipCode:
+          type: string
+      required:
+        - street
+        - city
+        - state
+        - zipCode
+
+tags:
+  - name: Products
+    description: Product management endpoints
+  - name: Orders
+    description: Order management endpoints
